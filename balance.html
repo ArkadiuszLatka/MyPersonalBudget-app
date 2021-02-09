@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="finances, incomes, expenses, saldo, money" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="author" content="Arkadiusz Łątka"/>		
+    <title>balance</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="styleMPB.css">
+
+    
+    <script src="https://kit.fontawesome.com/efe29b5125.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+
+</head>
+<body>
+ <nav>
+     <section class="row p-3 border-bottom">
+        <a class="navbar-brand text-dark px-5 " href="#"><i class="fas fa-piggy-bank text-success "></i> MyPerso<span
+            class="text-success">nal</span>Budget</a></i>
+
+        <div class="dropdown  ml-auto px-5 ">
+            <button class="btn btn-secondary dropdown-toggle bg-success" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Wybierz okres
+            </button>
+            
+            <div class="dropdown-menu " aria-labelledby="dropdownMenu2">
+              <button class="dropdown-item" type="button">Action</button>
+              <button class="dropdown-item" type="button">Another action</button>
+              <button class="dropdown-item" type="button">Something else here</button>
+              <button type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter">Open Modal</button>
+            
+             <button type="button" class="dropdown-item" data-toggle="modal"
+                data-target="#exampleModalCenter">
+                Niestandardowy
+              </button>
+            </div>
+          </div>
+        </section>
+    
+ </nav>
+
+<main>
+    <section>
+        <div class=" container ">
+            <div class="panel-info ">
+                <div class="col p-3 ml-auto">
+                    <div class="bg-success border-bottom ">Przychody : 4700</div>
+                    <div class=" border-bottom ">Wydatki : 3457</div>
+                    <div class=" border-bottom  bg-danger">
+                        <p class=" font-weight-bold text-center">Bilans: -85,40 PLN</p>
+				        <p class="summary text-center">Uważaj, wpadasz w długi!</p>
+                    </div>
+    
+                </div>
+            </div>
+            
+        </div>
+    </section>
+<!-- incomes -->
+    <section class=" border-bottom">
+        <div class=" container d-flex  ">
+            <div class="  incomes-info">
+                <div class="row">
+                    <div class=" col-md-8  main-table p-3 ">
+            
+        
+                        <h3>Przychody</h3>   
+                          
+                       
+                       <table class="table table-hover table-light">
+                           <thead>
+                               <tr>
+                                   <th class=" bg-success" scope="col">#</th>
+                                   <th class=" bg-success" scope="col ">Kategoria</th>
+                                   <th class=" bg-success" scope="col">Kwota</th>
+                                   <th class=" bg-success" scope="col">Waluta</th>
+                                   <th class=" bg-success" scope="col">Data</th>
+                               </tr>
+                           </thead>
+                           <tbody>
+                               <tr>
+                                   <th scope="row">1</th>
+                                   <td>Wynagrodzenie</td>
+                                   <td>3000</td>
+                                   <td >PLN</td>
+                                   <td>20/20/2020</td>
+                               </tr>
+                               <tr>
+                                   <th class=" "scope="row">2</th>
+                                   <td class="">Odsetki bankowe</td>
+                                   <td >24.5</td>
+                                   <td >PLN</td>
+                                   <td >20/20/2020</td>
+                               </tr>
+                               <tr>
+                                   <th scope="row">3</th>
+                                   <td>Sprzedaż na allegro</td>
+                                   <td>590</td>
+                                   <td >PLN</td>
+                                   <td>20/20/2020</td>
+                               </tr>
+                               <tr>
+                                   <th scope="row">4</th>
+                                   <td>Suma</td>
+                                   <td>3614.5</td>
+                                   <td >PLN</td>
+                                   <td>20/20/2020</td>
+                               </tr>
+                               
+                           </tbody>
+                       </table>
+                       
+                   </div>
+                   <div class="col-md-4  pie-chart p-5 ">
+                    <div id="chart" class="p-5"></div>
+                </div>
+               </div>
+               
+                  
+    
+                </div>
+            </div>
+            
+        </div>
+        
+    </section>
+    <!-- expense -->
+    <section >
+        <div class=" container d-flex ">
+            <div class="expense-info">
+                <div class="row">
+                    <div class=" col-md-8 justify-content-sm-center  main-table p-3 ">
+            
+        
+                        <h3>Wydatki</h3>   
+                          
+                       
+                       <table class="table table-hover table-light">
+                           <thead>
+                               <tr>
+                                   <th class=" bg-success" scope="col">#</th>
+                                   <th class=" bg-success" scope="col ">Kategoria</th>
+                                   <th class=" bg-success" scope="col">Kwota</th>
+                                   <th class=" bg-success" scope="col">Waluta</th>
+                                   <th class=" bg-success" scope="col">Data</th>
+                               </tr>
+                           </thead>
+                           <tbody>
+                               <tr>
+                                   <th scope="row">1</th>
+                                   <td>jedzenie</td>
+                                   <td>3000</td>
+                                   <td >PLN</td>
+                                   <td>20/20/2020</td>
+                               </tr>
+                               <tr>
+                                   <th class=" "scope="row">2</th>
+                                   <td class="">Mieszkanie</td>
+                                   <td >24.5</td>
+                                   <td >PLN</td>
+                                   <td >20/20/2020</td>
+                               </tr>
+                               <tr>
+                                   <th scope="row">3</th>
+                                   <td>Transport</td>
+                                   <td>590</td>
+                                   <td >PLN</td>
+                                   <td>20/20/2020</td>
+                               </tr>
+                               <tr>
+                                <th scope="row">3</th>
+                                <td>Transport</td>
+                                <td>590</td>
+                                <td >PLN</td>
+                                <td>20/20/2020</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Telekomunikacja</td>
+                                <td>590</td>
+                                <td >PLN</td>
+                                <td>20/20/2020</td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Zdrowie</td>
+                                <td>590</td>
+                                <td >PLN</td>
+                                <td>20/20/2020</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td>Ubrania</td>
+                                <td>590</td>
+                                <td >PLN</td>
+                                <td>20/20/2020</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td>Higiena</td>
+                                <td>590</td>
+                                <td >PLN</td>
+                                <td>20/20/2020</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">9</th>
+                                <td>Dzieci</td>
+                                <td>590</td>
+                                <td >PLN</td>
+                                <td>20/20/2020</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">10</th>
+                                <td>Rozrywka</td>
+                                <td>590</td>
+                                <td >PLN</td>
+                                <td>20/20/2020</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">11</th>
+                                <td>Podróże</td>
+                                <td>590</td>
+                                <td >PLN</td>
+                                <td>20/20/2020</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">12</th>
+                                <td>Szkolenia</td>
+                                <td>590</td>
+                                <td >PLN</td>
+                                <td>20/20/2020</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">13</th>
+                                <td>Książki</td>
+                                <td>590</td>
+                                <td >PLN</td>
+                                <td>20/20/2020</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">14</th>
+                                <td>Oszczędności</td>
+                                <td>590</td>
+                                <td >PLN</td>
+                                <td>20/20/2020</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">15</th>
+                                <td>Na emeryture</td>
+                                <td>590</td>
+                                <td >PLN</td>
+                                <td>20/20/2020</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">16</th>
+                                <td>Spłata długu</td>
+                                <td>590</td>
+                                <td >PLN</td>
+                                <td>20/20/2020</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">17</th>
+                                <td>Darowizna</td>
+                                <td>590</td>
+                                <td >PLN</td>
+                                <td>20/20/2020</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">18</th>
+                                <td>Innee wydatki</td>
+                                <td>590</td>
+                                <td >PLN</td>
+                                <td>20/20/2020</td>
+                            </tr>
+                               <tr>
+                                   <th scope="row"></th>
+                                   <td>Suma</td>
+                                   <td>3614.5</td>
+                                   <td >PLN</td>
+                                   <td>20/20/2020</td>
+                               </tr>
+
+                               
+                           </tbody>
+                       </table>
+                       
+                   </div>
+                   <div class="col-md-4   pie-chart p-5 ">
+                    <div id="chart2" class="p-5"></div>
+                </div>
+               </div>
+               
+                  
+    
+                </div>
+            </div>
+            
+        </div>
+        
+    </section>
+</main>
+
+<!-- modal -->
+
+  
+
+        
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>   
+<script>
+    var options = {
+          series: [3000, 24.5, 13, 43, ],
+          chart: {
+          width: 480,
+          type: 'pie',
+        },
+        
+        labels: ['Wynagrodzenie', 'odsetki bankowe', 'sprzedaż na alegro', 'inne', ],
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 300
+            },
+            legend: {
+             
+              position: 'top'
+            }
+          }
+        }]
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+</script>
+<script>
+    var options = {
+          series: [3000, 24.5, 13, 43, ],
+          chart: {
+          width: 480,
+          type: 'pie',
+        },
+        
+        labels: ['Wynagrodzenie', 'odsetki bankowe', 'sprzedaż na alegro', 'inne', ],
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 300
+            },
+            legend: {
+             
+              position: 'top'
+            }
+          }
+        }]
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart2"), options);
+        chart.render();
+</script>
+</body>
+</html>
